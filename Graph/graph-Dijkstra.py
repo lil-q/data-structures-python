@@ -44,6 +44,7 @@ class Graph:
                 alt = distances[smallest] + self.vertices[smallest][neighbor] 
                 if alt < distances[neighbor]: # 得到的路径比之前的近，则更新nodes，previous
                     previous[neighbor] = smallest
+                    distances[neighbor] = alt
                     for n in nodes:
                         if n[1] == neighbor:
                             n[0] = alt
